@@ -1,0 +1,13 @@
+GET http://127.0.0.1:3000/sights
+################################
+DELETE http://127.0.0.1:3000/packages/4/Only the Best, not the Rest
+################################
+PATCH http://127.0.0.1:3000/sight/1
+Content-Type: application/json
+
+{
+    "title": "Anonym",
+    "admission": 10
+}
+################################
+GET http://127.0.0.1:3000/sight/1
