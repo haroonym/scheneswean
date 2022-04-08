@@ -2,14 +2,9 @@
   <v-app>
     <v-main>
       <Navbar />
-      <v-container>
-        <router-view
-          :sights="sights"
-          :detailSight="detailSight"
-          @delPackage="delPackage"
-          @getSights="getSights"
-          @getSight="getSight"
-      /></v-container>
+
+        <router-view :sights="sights" @delPackage="delPackage" @getSights="getSights"
+      />
     </v-main>
   </v-app>
 </template>
@@ -49,17 +44,6 @@ export default {
         });
         this.getSights();
         console.log(data);
-      } catch (error) {
-        console.error(error);
-      }
-    },
-    async getSight(id) {
-      try {
-        const { data } = await axios({
-          url: `http://localhost:3000/sight/${id}`,
-          method: 'GET',
-        });
-        this.detailSight = data;
       } catch (error) {
         console.error(error);
       }
